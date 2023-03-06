@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import Background from './components/background';
+import Header from './components/header';
+import Homepage from './components/homepage';
+import MyForm from './components/testing';
+import Whiteboard from './components/whiteboard';
+import Algorithm from './components/algo';
+import DifficultyPage from './components/difficulty_page';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './index.css';
+
+
+class App extends Component {
+
+  componentDidMount() {
+    document.body.style.height = "100vh";
+    document.body.style.backgroundImage = "linear-gradient(to top right, #bef264, #d9f99d , #ccf779)"
+  }
+
+  render() {
+    console.log('App - Rendered');
+    return (
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<DifficultyPage />} />
+          <Route path="Whiteboard" element={<Whiteboard />} />
+        </Routes>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
