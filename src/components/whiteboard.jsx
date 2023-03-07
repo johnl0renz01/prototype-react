@@ -6,9 +6,8 @@ import { useNavigate } from "react-router-dom";
 import * as ReactDOM from 'react-dom';
 import $ from "jquery";
 
-import { MY_API_KEY } from './API_KEY';
 import EquationSolver from './equationSolver';
-
+import MY_API_KEY from './API_KEY';
 
 export default function Whiteboard() {
 
@@ -582,7 +581,7 @@ export default function Whiteboard() {
         url: 'https://chatgpt-ai-chat-bot.p.rapidapi.com/ask',
         headers: {
           'content-type': 'application/json',
-          'X-RapidAPI-Key': '4c703d05c2msh158318bd35bbfbfp11a9a6jsne1fd6658989b',
+          'X-RapidAPI-Key': MY_API_KEY.getGPT_KEY(),
           'X-RapidAPI-Host': 'chatgpt-ai-chat-bot.p.rapidapi.com'
         },
         data: '{"text":" Generate 5 linear equation to solve for, only 1 variable, it must be very difficult level and distinct to each other. The equation should be similiar as this example: 2(3x-5) = 3(4x+2)."}'

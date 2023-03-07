@@ -6,6 +6,7 @@ import * as ReactDOM from 'react-dom';
 import $ from "jquery";
 
 import QuestionList from './questionList';
+import MY_API_KEY from './API_KEY';
 
 export default function DifficultyPage() {
 
@@ -73,7 +74,7 @@ export default function DifficultyPage() {
           url: 'https://chatgpt-ai-chat-bot.p.rapidapi.com/ask',
           headers: {
             'content-type': 'application/json',
-            'X-RapidAPI-Key': '4c703d05c2msh158318bd35bbfbfp11a9a6jsne1fd6658989b',
+            'X-RapidAPI-Key': MY_API_KEY.getGPT_KEY(),
             'X-RapidAPI-Host': 'chatgpt-ai-chat-bot.p.rapidapi.com'
           },
           data: '{"text":" Generate 5 linear equation to solve for, only 1 variable, it must be very difficult level and distinct to each other. The equation should be similiar as this example: 2(3x-5) = 3(4x+2), or much even complicated, randomize each equation, include multiplication symbol between expressions, values can range from 1-1000. Put each equation inside bracket []"}'
@@ -168,15 +169,15 @@ export default function DifficultyPage() {
         <>
         <section >
         {/* <input type="text" value={result} className="w-full"></input>*/}
-            <div className="mx-auto my-16 w-2/3  ">
-                <div className="px-4 py-8 pb-24 rounded-6xl  border-l-12 border-b-12 border-gray-600/60 bg-gradient-to-t from-gray-200 via-white to-white border-r-12 border-r-gray-300/80 shadow-2xl shadow-yellow-400">
-                    <div className="bg-gradient-to-t from-gray-200 via-white to-white rounded-4xl  px-6 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-6">
-                        <div className="mb-6 mx-auto sm:text-center md:mb-10">
-                            <p className="mb-2 text-4xl font-semibold leading-none text-center">
+            <div className="mx-auto my-16 w-8/12 select-none">
+                <div className="px-6 py-8 pb-32 rounded-6xl  border-l-12 border-b-12 border-gray-600/60 bg-gradient-to-t from-gray-200 via-white to-white border-r-12 border-r-gray-300/80 shadow-2xl shadow-yellow-400">
+                    <div className="px-6 py-24  rounded-4xl  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-6 lg:py-6">
+                        <div className="mb-6 mx-auto sm:text-center md:mb-10 ">
+                            <p className="mb-2 text-4xl font-semibold leading-none text-center ">
                                 Select the Difficulty Level You Want to Answer
                             </p>
                         </div>
-                        <div className="grid gap-6 row-gap-5 lg:grid-cols-3 pt-3">
+                        <div className="w-full grid gap-x-12 row-gap-5 lg:grid-cols-3 pt-3 select-none">
                         {/* 
                         <form  
                             action="http://localhost:80/Prototype-React/my-app/api/data.php"
@@ -184,8 +185,8 @@ export default function DifficultyPage() {
                             onSubmit={(event) => handleSubmit(event)}>
                             <input type="text" name="rawList" id="rawList" value={rawList}></input>
                         */}
-                        <button onClick={pickDifficulty} className="w-full">
-        
+                        <button onClick={pickDifficulty} className="w-full transform transition duration-500 hover:scale-105">
+
                             <div className="relative h-12 w-20 m-auto bg-gray-400 rounded-tl-full rounded-tr-full border-l-4 border-l-gray-500 border-r-4 border-r-gray-300"></div>
                             <div className="relative -mt-9 h-9 w-12 pl-1 border-r-4 border-gray-500 m-auto bg-white rounded-tl-full rounded-tr-full "></div>
                             
@@ -193,7 +194,7 @@ export default function DifficultyPage() {
                                 <div className="relative rounded-5xl bg-gray-600 w-7/12 h-14 mx-auto mt-6 z-10 border-l-6 border-b-6 border-gray-700/80 border-r-6 border-r-gray-500">
                                    
                             </div>
-                                <div className="relative text-gray-800 hover:shadow-xl hover:text-lime-500 hover:shadow-lime-400 -mt-10 bg-mainBGBrown rounded-4xl border-l-8 border-b-8 border-yellow-700 border-r-8 border-r-brTwo shadow-md shadow-yellow-900/90 pl-8 pr-8 py-6 pb-12 ">
+                                <div className="relative text-gray-800 hover:shadow-xl transform transition duration-500 hover:text-lime-500 hover:shadow-lime-400 -mt-10 bg-mainBGBrown rounded-4xl border-l-8 border-b-8 border-yellow-700 border-r-8 border-r-brTwo shadow-md shadow-yellow-900/90 pl-8 pr-8 py-6 pb-12 ">
                                     <div className="border-l-4 border-b-4 border-gray-600/60 border-r-4 border-r-gray-300/80 shadow-md shadow-yellow-800">
                                         <div className="bg-white border-b-2 border-black/70 py-4">
                                         </div>
@@ -264,7 +265,7 @@ export default function DifficultyPage() {
         
                         {/*<!--Average-->*/}
         
-                        <a href="#" onClick={whiteboard}>
+                        <button onClick={""} className="w-full transform transition duration-500 hover:scale-105">
         
                             <div className="relative h-12 w-20 m-auto bg-gray-400 rounded-tl-full rounded-tr-full border-l-4 border-l-gray-500 border-r-4 border-r-gray-300"></div>
                             <div className="relative -mt-9 h-9 w-12 pl-1 border-r-4 border-gray-500 m-auto bg-white rounded-tl-full rounded-tr-full "></div>
@@ -273,7 +274,7 @@ export default function DifficultyPage() {
                                 <div className="relative rounded-5xl bg-gray-600 w-7/12 h-14 mx-auto mt-6 z-10 border-l-6 border-b-6 border-gray-700/80 border-r-6 border-r-gray-500">
                                     
                             </div>
-                                <div className="relative -mt-10 text-gray-800 hover:shadow-xl hover:text-yellow-500 hover:shadow-yellow-400 bg-mainBGBrown rounded-4xl border-l-8 border-b-8 border-yellow-700 border-r-8 border-r-brTwo shadow-md shadow-yellow-900/90 pl-8 pr-8 py-6 pb-12 ">
+                                <div className="relative -mt-10 text-gray-800 hover:shadow-xl transform transition duration-500 hover:shadow-xl hover:text-yellow-500 hover:shadow-yellow-400 bg-mainBGBrown rounded-4xl border-l-8 border-b-8 border-yellow-700 border-r-8 border-r-brTwo shadow-md shadow-yellow-900/90 pl-8 pr-8 py-6 pb-12 ">
                                     <div className="border-l-4 border-b-4 border-gray-600/60 border-r-4 border-r-gray-300/80 shadow-md shadow-yellow-800">
                                         <div className="bg-white border-b-2 border-black/70 py-4">
                                         </div>
@@ -339,11 +340,11 @@ export default function DifficultyPage() {
                                 </div>
                             </div>
                         
-                        </a>
+                        </button>
         
                         {/*<!--DIFFICULT-->*/}
         
-                        <a href="#">
+                        <button onClick={""} className="w-full transform transition duration-500 hover:scale-105">
         
                             <div className="relative h-12 w-20 m-auto bg-gray-400 rounded-tl-full rounded-tr-full border-l-4 border-l-gray-500 border-r-4 border-r-gray-300"></div>
                             <div className="relative -mt-9 h-9 w-12 pl-1 border-r-4 border-gray-500 m-auto bg-white rounded-tl-full rounded-tr-full "></div>
@@ -352,7 +353,7 @@ export default function DifficultyPage() {
                                 <div className="relative rounded-5xl bg-gray-600 w-7/12 h-14 mx-auto mt-6 z-10 border-l-6 border-b-6 border-gray-700/80 border-r-6 border-r-gray-500">
                                     
                             </div>
-                                <div className="relative -mt-10 text-gray-800 hover:shadow-xl hover:text-red-600 hover:shadow-red-500 bg-mainBGBrown rounded-4xl border-l-8 border-b-8 border-yellow-700 border-r-8 border-r-brTwo shadow-md shadow-yellow-900/90 pl-8 pr-8 py-6 pb-12 ">
+                                <div className="relative -mt-10 text-gray-800 hover:shadow-xl transform transition duration-500 hover:shadow-xl hover:text-red-600 hover:shadow-red-500 bg-mainBGBrown rounded-4xl border-l-8 border-b-8 border-yellow-700 border-r-8 border-r-brTwo shadow-md shadow-yellow-900/90 pl-8 pr-8 py-6 pb-12 ">
                                     <div className="border-l-4 border-b-4 border-gray-600/60 border-r-4 border-r-gray-300/80 shadow-md shadow-yellow-800">
                                         <div className="bg-white border-b-2 border-black/70 py-4">
                                         </div>
@@ -417,7 +418,7 @@ export default function DifficultyPage() {
                                     </p>
                                 </div>
                             </div>
-                        </a>
+                        </button>
                         </div>
                     </div>
                 </div>
